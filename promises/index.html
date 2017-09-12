@@ -9,30 +9,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script>
-                document.addEventListener('readystatechange', function(){
+        document.addEventListener('readystatechange', function(){
             console.log(window.document.readyState)
         });
-        
+
         function ready() {
-    
+            console.log('entrou');
           return new Promise(function(resolve) {
              function checkState() {
                if (document.readyState !== 'loading') {
                  resolve();
                }
              }
-                document.addEventListener('readystatechange', checkState());
+                document.addEventListener('readystatechange', checkState);
           checkState();
           });
     }
-    
-        ready().then(wrapperResolved);
     
         // Just here for your testing
         function wrapperResolved() {
             var completion = document.querySelector('.completion');
             completion.innerHTML = "Resolved!";
         }
+
+        ready().then(wrapperResolved);
 
 
     </script>
