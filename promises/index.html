@@ -17,7 +17,7 @@
             console.log('entrou');
           return new Promise(function(resolve) {
              function checkState() {
-               if (document.readyState !== 'loading') {
+               if (document.readyState == 'complete') {
                  resolve();
                }
              }
