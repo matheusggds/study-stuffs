@@ -1,2 +1,4 @@
-# study-stuffs
-Using for test some things
+Just some tests, sorry bro!
+
+_But, just in case: https://matheusggds.github.io/study-stuffs/_
+_Use folder name at the end_
