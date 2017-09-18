@@ -11,14 +11,76 @@
 </head>
 
 <body>
+
+
     <div class="container">
-        <div id="app">
-            <h1 class="title">
-                <a v-bind:href="link">{{ getTitle() }}</a>
-            </h1>
+        <h4 class="title is-4">
+            Exercicio 1
+        </h4>
+        <div id="exercise_1">
+            <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+            <p>VueJS is pretty cool - {{name}} ({{age}})</p>
+            <!-- 2) Output your age, multiplied by 3 -->
+            <p>{{age*3}}</p>
+            <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+            <p>{{getRandom()}}</p>
+            <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+            <div>
+                <img v-bind:src="imageSource" style="width:100px;height:100px">
+            </div>
+            <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+            <div>
+                <form>
+                    <input class="input" type="text" v-bind:value="name">
+                </form>
+            </div>
         </div>
-        <h2 class="subtitle">First impressions.</h2>
+
+        <hr>
+
+        <h4 class="title is-4">
+            Exercicio 2
+        </h4>
+
+        <div id="exercise_2">
+            <!-- 1) Show an alert when the Button gets clicked -->
+            <div>
+                <button v-on:click="alert()">Show Alert</button>
+            </div>
+            <!-- 2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value) -->
+            <div>
+                <input v-on:keydown="value=$event.target.value" class="input" type="text">
+                <p>{{ value }}</p>
+            </div>
+            <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
+            <div>
+                <input v-on:keydown.enter="value=$event.target.value" class="input" type="text">
+                <p>{{ value }}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h4 class="title is-4">
+            Exercicio 3
+        </h4>
+
+        <div id="exercise_3">
+            <!-- 1) Show a "result" of 'not there yet' as long as "value" is not equal to 37 - you can change "value" with the buttons. Print 'done' once you did it -->
+            <div>
+                <p>Current Value: {{ value }}</p>
+                <button class="button" @click="value += 5">Add 5</button>
+                <button class="button" @click="value += 1">Add 1</button>
+                <p>{{ result }}</p>
+            </div>
+            <!-- 2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000) -->
+            <div>
+                <input class="input" type="text">
+                <p>{{ value }}</p>
+            </div>
+        </div>
     </div>
+
 </body>
 <script src="js/app.js"></script>
 
