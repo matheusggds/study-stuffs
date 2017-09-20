@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Slayer</title>
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="monster_game">
+    <section class="container">
+        <div class="columns">
+            <div class="column">
+            <h1 class="text-center">YOU</h1>
+            <div class="healthbar">
+                <div class="you healthbar text-center" :style="{'width': yourLife + '%'}" style="background-color: green; margin: 0; color: white;">
+
+                </div>
+            </div>
+            <p class="text-center"><small>{{yourLife}}/<span v-once>{{yourLife}}</span></small></p>
+        </div>
+        <div class="column">
+            <h1 class="text-center">MONSTER</h1>
+            <div class="healthbar">
+                <div id="monsterBar" class="monster healthbar text-center" :style="{'width': monsterLife + '%'}" style="background-color: green; margin: 0; color: white;">
+
+                </div>
+            </div>
+            <p class="text-center"><small>{{monsterLife}}/<span v-once>{{monsterLife}}</span></small></p>
+        </div>
+        </div>
+    </section>
+    <section v-if="!gameRunning" class="container controls">
+       <div class="columns">
+            <div class="column">
+            <button id="start-game" @click="startGame()">START NEW GAME</button>
+        </div>
+       </div>
+    </section>
+    <section v-else class="container controls">
+       <div class="columns">
+            <div class="small-12 column">
+            <button id="attack" @click="callAction(1)">ATTACK</button>
+            <button id="special-attack" @click="callAction(2)">SPECIAL ATTACK</button>
+            <button id="heal" @click="callAction(3)">HEAL</button>
+            <button id="give-up" @click="callAction(4)">GIVE UP</button>
+        </div>
+       </div>
+    </section>
+    <section v-if="gameRunning" class="container log">
+        <h5>Game log</h5>
+        <div class="columns">
+            <div class="column">
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+        </div>
+        </div>
+    </section>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
