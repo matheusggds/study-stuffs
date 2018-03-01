@@ -34,10 +34,7 @@ new Vue({
   },
   methods: {
     startGame: function() {
-      this.gameRunning = true;
-      this.log = [];
-      this.yourLife = 100;
-      this.monsterLife = 100;
+      this.resetGame();
     },
     callAction: function(idAction) {
       var monsterHealthBar = document.getElementById('monsterBar');
@@ -60,19 +57,27 @@ new Vue({
       })
 
       this.yourLife -= getMonster[0].dmg;
+    },
+    resetGame: function() {
+      this.gameRunning = true;
+      this.log = [];
+      this.yourLife = 100;
+      this.monsterLife = 100;
+    },
+    endGame: function(message) {
+      alert(message);
+      this.gameRunning = false;
     }
   },
   watch: {
     yourLife: function(e) {
       if(e <= 0 && e < this.monsterLife) {
-          alert("O monstrou ganhou, noob.") 
-        this.gameRunning = false;
+        this.endGame('O monstro ganhou.')
       }
     },
     monsterLife: function(e) {
       if(e <= 0 && e < this.yourLife) {
-         alert("Você ganhooou!") 
-        this.gameRunning = false;
+        this.endGame('Você ganhou.')
       }
     }
   }
