@@ -1,0 +1,11 @@
+#catsSearch {
+    margin-top: 150px;
+}
+
+.catList_item {
+    cursor: pointer;
+}
+
+img {
+    max-width: 400px;
+}
