@@ -1,0 +1,25 @@
+{
+  "name": "performance_optimization",
+  "version": "1.0.0",
+  "description": "Udacity Web Performance Optimizaiton Course",
+  "main": "scripts/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusggds/study-stuffs.git"
+  },
+  "keywords": [
+    "udacity",
+    "web",
+    "performance",
+    "js"
+  ],
+  "author": "Matheus Gomide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheusggds/study-stuffs/issues"
+  },
+  "homepage": "https://github.com/matheusggds/study-stuffs#readme"
+}
