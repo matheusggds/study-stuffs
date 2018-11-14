@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Canvas</title>
+    <title>Canvas 2D Image data</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,25 +17,22 @@
         const   canvinhas = document.querySelector('#firstCanvasInMyLife'),
                 ctx     = canvinhas.getContext('2d');
 
-        let image = new Image();
+        let data = ctx.getImageData(0, 0, 400, 400);
 
-        /* IMAGES
-        image.onload = () => {
-            console.log('Carregou a Imagem');
-            ctx.drawImage(image, 0, 0, canvinhas.width, canvinhas.height);
-            let savedImage = canvinhas.toDataURL();
-            window.open(savedImage)            
+        function paintGreen (imageData) {
+          let numPixels = imageData.data.length/4;
+
+          for (var i = 0; i < numPixels; i++) {
+            if (i % 10 === 0) {
+              imageData.data[i * 4 + 1] = 255;
+              imageData.data[i * 4 + 3] = 255;
+            }
+          }
+
+          ctx.putImageData(imageData, 0, 0);
         }
 
-        image.src='cat.png'
-        */
-
-        /* RECTANGES / SQUARES 
-        ctx.fillRect(50, 50, 100, 100);
-        ctx.strokeRect(150, 150, 100, 100);
-        */
-        
-
+        paintGreen(data);
     </script>
       
     <!-- Optional JavaScript -->

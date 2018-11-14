@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <div class="container">
+        <h1>teste</h1>
+
+        <a href="#" class="btn btn-success" id="incrementCounter">
+            click me!
+        </a>        
+    </div>
+
+    <script>
+        const button = document.getElementById('incrementCounter');
+
+        button.addEventListener('click', (function() {
+            let count = 0;
+
+            console.log('Consolado quando o browser está lendo o script');
+
+            return function() {
+                count += 1;
+
+                console.log('Consolado quando o click é executado');
+                
+                if (count === 2) {
+                    alert('This alert appears every other press!');
+                    count = 0;
+                    }
+            }
+        }())
+        );
+    </script>
+  </body>
+</html>
