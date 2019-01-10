@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>git API</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- standalone (20.3kb) -->
+    <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+  </head>
+  <body>    
+    <script>        
+        // you can authenticate with username and password
+        var passwordAuth = new GitHub({
+            username: 'matheusggds',
+            password: 'nxbxbsx9'
+        });
+
+        var brastempRepo = passwordAuth.getRepo('jussilabs', 'brastemp-vtex');
+
+        brastempRepo.listPullRequests({
+            'state': 'open'
+        }).then(res => {
+            console.log(res);            
+        });        
+    </script>
+  </body>
+</html>
