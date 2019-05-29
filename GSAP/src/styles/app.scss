@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:200,400,600,700&display=swap');
+
+@import 'bootstrap/scss/_functions',
+		'bootstrap/scss/_variables';
+
+// override bootstrap 4 variables
+$primary: #C4170C;
+$gray-500: #707070;
+
+// reiniti variables $theme-colors to build only usefull classes
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+	"primary":    	$primary
+  ),
+  $theme-colors
+);
+
+@import 'bootstrap/scss/_mixins',
+		'bootstrap/scss/_root',
+		'bootstrap/scss/_reboot',
+		'bootstrap/scss/_grid',
+		'bootstrap/scss/_type';
+
+@import 'bootstrap/scss/utilities/_flex',
+		'bootstrap/scss/utilities/_spacing',
+		'bootstrap/scss/utilities/_text',
+		'bootstrap/scss/utilities/_display';
+
+// responsive typography
+html {
+	@include media-breakpoint-down(sm) {
+		font-size: 14px;
+	}
+}
+
+img {
+	max-width: 100%;
+}
