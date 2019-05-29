@@ -145,5 +145,5 @@ gulp.task('watch', ['styles', 'scripts'], () => {
 	gulp.watch([paths.js], ['scripts']);
 	gulp.watch([paths.scss], ['styles']);
 	gulp.watch([paths.images], ['images-min']);
-	gulp.watch([paths.php], ['html']);
+	gulp.watch([paths.html], ['html']);
 });

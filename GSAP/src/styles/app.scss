@@ -39,3 +39,11 @@ html {
 img {
 	max-width: 100%;
 }
+
+.item {
+	background: $gray-500;
+	border-radius: 5px;
+	height: 250px;
+	width: 250px;
+	margin: 50px auto;
+}

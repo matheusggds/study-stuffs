@@ -1,9 +1,13 @@
 'use strict';
 
-import jQuery from 'jquery';
+import { TweenMax } from 'gsap';
 
+(function() {
+	const items = document.querySelectorAll('.item');
 
-(function($) {
-	console.log('hey 1337!!!');
-
-})(jQuery);
+	// .set()
+	TweenMax.set(items, {
+		x: -100,
+		y: 100
+	})
+})();
