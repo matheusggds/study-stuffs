@@ -12,11 +12,11 @@
             icon: 22
         },
         'DEFAULT': {
-            avatar: 100,
+            avatar: 125,
             icon: 30
         },
         'LG': {
-            avatar: 150,
+            avatar: 175,
             icon: 50
         }
     }
