@@ -1,4 +1,3 @@
-Just some tests, sorry bro!
+Just some tests, and usefull notes.
 
-_But, just in case: https://matheusggds.github.io/study-stuffs/_
-_Use folder name at the end_
+Feel free to explore :)
