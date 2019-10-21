@@ -90,7 +90,6 @@
         }
 
         connectedCallback() {
-            console.log(this._currentSize)
             this.$title.innerHTML = this._currentTitle
 
             if(this.hasAttribute('avatar-image')) {
