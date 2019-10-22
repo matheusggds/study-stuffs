@@ -69,3 +69,64 @@ And finally, though not part of the lifecycle, we register our element to the Cu
 window.customElements.define('my-element', MyElement);
 ```
 The CustomElementRegistry is an interface that provides methods for registering custom elements and querying registered elements. The first argument of the registries' define method will be the name of the element, so in this case it'll register <my-element>, and the second argument passes the class we made.
+
+***
+
+### First steps
+-   Create `template` than `innerHTML` on it with your initial _elements_, we use `template` because cloning templates is much cheaper then calling `.innerHTML` for all instances of our component.
+
+-   Use `constructor` to attach our shadowroot, and set it do `open`. <br>
+    Clone your template to shadowroot.
+
+> An important thing to note is that the display is always set to display: inline;, which means you can't set a width or height on your element. So make sure to set a :host display style (e.g. block, inline-block, flex) unless you prefer the default of inline.
+
+> Light DOM: <br>
+> The light DOM lives outside the component's shadow DOM, and is basically anything that is not shadow DOM. For example, the `<h1>Hello world</h1>` up there lives in the light DOM. The term light DOM is used to distinguish it from the Shadow DOM. It's perfectly fine to make web components using light DOM, but you miss out on the great features of shadow DOM.
+>
+> Open shadow DOM: <br>
+> Since the latest version (V1) of the shadow DOM specification, we can now use open or closed shadow DOM. Open shadow DOM allows us to create a sub DOM tree next to the light DOM to provide encapsulation for our components. Our shadow DOM can still be pierced by javascript like so: document.querySelector('our-element').shadowRoot. One of the downsides of shadow DOM is that web components are still relatively young, and many external libraries don't account for it.
+>
+> Closed shadow DOM: <br>
+> Closed shadow roots are not very applicable, as it prevents any external javascript from piercing the shadowroot. Closed shadow DOM makes your component less flexible for yourself and your end users and should generally be avoided.
+>
+>Some examples of elements that do use a closed shadow DOM are the `<video>` element.
+
+``` javascript
+const template = document.createElement('template');
+template.innerHTML = `
+<style>
+    :host {
+    display: block;
+    font-family: sans-serif;
+    text-align: center;
+    }
+
+    button {
+    border: none;
+    cursor: pointer;
+    }
+
+    ul {
+    list-style: none;
+    padding: 0;
+    }
+</style>
+<h1>To do</h1>
+
+<input type="text" placeholder="Add a new to do"></input>
+<button>✅</button>
+
+<ul id="todos"></ul>
+`;
+
+class TodoApp extends HTMLElement {
+    constructor() {
+        super();
+        this._shadowRoot = this.attachShadow({ 'mode': 'open' });
+        this._shadowRoot.appendChild(template.content.cloneNode(true));
+        this.$todoList = this._shadowRoot.querySelector('ul');
+    }
+}
+
+window.customElements.define('to-do-app', TodoApp);
+```
