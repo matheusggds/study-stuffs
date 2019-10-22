@@ -3,8 +3,12 @@
 links
 - [Web Components from zero to hero](https://dev.to/thepassle/web-components-from-zero-to-hero-4n4m)
 
+### Todo list with Web Components
+At the _/todolist_ folder you can check this project code using the following tips
 
-### intro
+<iframe src="https://codesandbox.io/embed/todo-list-with-web-components-o2rdf?fontsize=14&hidenavigation=1&view=preview" title="TODO list with web components" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+### Intro
 Web components are getting more and more traction. With the Edge team's recent announcement of implementing Custom Elements and Shadow DOM, all major browsers will soon support web components natively. Companies like Github, Netflix, Youtube and ING are even already using web components in production. Neat! However, surprisingly enough, none of those huge, succesful companies have implemented a (you guessed it) to-do app!
 
 

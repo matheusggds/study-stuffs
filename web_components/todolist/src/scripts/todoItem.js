@@ -46,7 +46,7 @@ class TodoItem extends HTMLElement {
     connectedCallback() {
         // We set a default attribute here; if our end user hasn't provided one,
         // our element will display a "placeholder" text instead.
-        if(!this.hasAttribute('text')) {
+        if(!this.hasAttribute('text')) {    
             this.setAttribute('text', 'placeholder');
         }
 
@@ -86,7 +86,7 @@ class TodoItem extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['text', 'checked'];
+        return ['text', 'checked', 'index'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {

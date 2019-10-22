@@ -49,12 +49,12 @@ import './todoItem'
 
         _renderTodoList() {
             this.$todoList.innerHTML = ''
-    
+
             this._todos.forEach((todo, index) => {
                 let $todoItem = document.createElement('to-do-item');
                 $todoItem.setAttribute('text', todo.text);
 
-                if(todo.check) {
+                if(todo.checked) {
                     $todoItem.setAttribute('checked', '')
                 }
 
@@ -75,8 +75,7 @@ import './todoItem'
             }
         }
 
-        _toggleTodo(e) {
-            console.log(e)
+        _toggleTodo(e) {            
             const todo = this._todos[e.detail];
             this._todos[e.detail] = Object.assign({}, todo, {
                 checked: !todo.checked
@@ -102,7 +101,7 @@ import './todoItem'
     window.customElements.define('to-do-app', TodoApp);
 
     document.querySelector('to-do-app').todos = [
-        {text: "make a to-doo list", check: false},
-        {text: 'another to-do task', check: true}
+        {text: "make a to-doo list", checked: false},
+        {text: 'another to-do task', checked: true}
     ]
 })()
