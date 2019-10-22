@@ -18,11 +18,14 @@ The [Custom Elements](https://w3c.github.io/webcomponents/spec/custom/) api allo
 [Shadow DOM](https://w3c.github.io/webcomponents/spec/custom/) gives us a way to encapsulate the styling and markup of our components. It's a sub DOM tree attached to a DOM element, to make sure none of our styling leaks out, or gets overwritten by any external styles. This makes it great for modularity.
 
 #### ES Modules
+es6 modules, thats it.
 
 #### HTML Templates
 The [HTML `<template>`](https://html.spec.whatwg.org/multipage/scripting.html#the-template-element/) tag allows us to write reusable chunks of DOM. Inside a template, scripts don't run, images don't load, and styling/mark up is not rendered. A template tag itself is not even considered to be in the document, until it's activated. HTML templates are great, because for every instance of our element, only 1 template is used.
 
 ### Component lifecycle
+Let's take a look at a custom element's lifecycle.
+
 ``` javascript
 class MyElement extends HTMLElement {
     constructor() {
@@ -73,23 +76,6 @@ The CustomElementRegistry is an interface that provides methods for registering 
 ***
 
 ### First steps
--   Create `template` than `innerHTML` on it with your initial _elements_, we use `template` because cloning templates is much cheaper then calling `.innerHTML` for all instances of our component.
-
--   Use `constructor` to attach our shadowroot, and set it do `open`. <br>
-    Clone your template to shadowroot.
-
-> An important thing to note is that the display is always set to display: inline;, which means you can't set a width or height on your element. So make sure to set a :host display style (e.g. block, inline-block, flex) unless you prefer the default of inline.
-
-> Light DOM: <br>
-> The light DOM lives outside the component's shadow DOM, and is basically anything that is not shadow DOM. For example, the `<h1>Hello world</h1>` up there lives in the light DOM. The term light DOM is used to distinguish it from the Shadow DOM. It's perfectly fine to make web components using light DOM, but you miss out on the great features of shadow DOM.
->
-> Open shadow DOM: <br>
-> Since the latest version (V1) of the shadow DOM specification, we can now use open or closed shadow DOM. Open shadow DOM allows us to create a sub DOM tree next to the light DOM to provide encapsulation for our components. Our shadow DOM can still be pierced by javascript like so: document.querySelector('our-element').shadowRoot. One of the downsides of shadow DOM is that web components are still relatively young, and many external libraries don't account for it.
->
-> Closed shadow DOM: <br>
-> Closed shadow roots are not very applicable, as it prevents any external javascript from piercing the shadowroot. Closed shadow DOM makes your component less flexible for yourself and your end users and should generally be avoided.
->
->Some examples of elements that do use a closed shadow DOM are the `<video>` element.
 
 ``` javascript
 const template = document.createElement('template');
@@ -131,6 +117,24 @@ class TodoApp extends HTMLElement {
 window.customElements.define('to-do-app', TodoApp);
 ```
 
+-   Create `template` than `innerHTML` on it with your initial _elements_, we use `template` because cloning templates is much cheaper then calling `.innerHTML` for all instances of our component.
+
+-   Use `constructor` to attach our shadowroot, and set it do `open`. <br>
+    Clone your template to shadowroot.
+
+> An important thing to note is that the display is always set to display: inline;, which means you can't set a width or height on your element. So make sure to set a :host display style (e.g. block, inline-block, flex) unless you prefer the default of inline.
+
+> Light DOM: <br>
+> The light DOM lives outside the component's shadow DOM, and is basically anything that is not shadow DOM. For example, the `<h1>Hello world</h1>` up there lives in the light DOM. The term light DOM is used to distinguish it from the Shadow DOM. It's perfectly fine to make web components using light DOM, but you miss out on the great features of shadow DOM.
+>
+> Open shadow DOM: <br>
+> Since the latest version (V1) of the shadow DOM specification, we can now use open or closed shadow DOM. Open shadow DOM allows us to create a sub DOM tree next to the light DOM to provide encapsulation for our components. Our shadow DOM can still be pierced by javascript like so: document.querySelector('our-element').shadowRoot. One of the downsides of shadow DOM is that web components are still relatively young, and many external libraries don't account for it.
+>
+> Closed shadow DOM: <br>
+> Closed shadow roots are not very applicable, as it prevents any external javascript from piercing the shadowroot. Closed shadow DOM makes your component less flexible for yourself and your end users and should generally be avoided.
+>
+>Some examples of elements that do use a closed shadow DOM are the `<video>` element.
+
 ### Attributes vs Properties
 _Attributes_ dont allow rich data, in fact, they only allow a `String` type as a limitation of HTML. _Properties_ are more flexible and can handle complex data types loke Objects or Arrays.
 
@@ -168,7 +172,7 @@ and one for false:
 ```
 
 #### Reflecting properties to attributes
-When you set a attibure, is cool to available this value as a propertie to. This is called _reflecting properties to attributes_.
+When you set a attibute, is cool to available this value as a propertie too. This is called _reflecting properties to attributes_.
 
 for example, on a component, with that _attributes_:
 
