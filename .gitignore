@@ -2,3 +2,5 @@ vuejs/node_modules
 web_components/dist
 web_components/.cache
 web_components/avatar/.cache
+web_components/inputHelper/.cache
+web_components/inputHelper/dist
