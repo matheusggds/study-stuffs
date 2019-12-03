@@ -2,5 +2,20 @@
 
 With: Jem Young, Frontend Enginner Senior at Netflix
 
-[Slides](https://docs.google.com/presentation/d/1FPpbZ919vt8e1k2EGPd7BKhDlHao79ykvYLfDcMOsMo/edit)
+[Slides](jemyoung.com/fefs)
 
+### What is a Full Stack Engineer
+Somone who can build an application from start to finish
+
+### Command Line
+- **cd** - change directory
+- **ls** - list directory
+- **pwd** - print working
+- **mkdir** - make directory
+- **rmdir** - remove directory
+
+- **cat** - show file contents
+- **man** - command manual
+- **less** - show file contents by page
+- **rm** - remove file
+- **echo** - repeat file
