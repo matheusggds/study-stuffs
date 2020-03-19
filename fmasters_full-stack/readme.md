@@ -8,6 +8,11 @@ With: Jem Young, Frontend Enginner Senior at Netflix
 Somone who can build an application from start to finish
 
 ### Command Line
+
+**GUI**: Graphical User Interface
+
+Why Command Line? Command line exists in every SO, since ever, and you can do so mutch things always equal. 
+
 - **cd** - change directory
 - **ls** - list directory
 - **pwd** - print working
@@ -21,7 +26,12 @@ Somone who can build an application from start to finish
 - **echo** - repeat file
 
 ### Shell
-Shell is just a command interpreter to interface with a system. __Terminal__ is just a wrapper on shell applications
+
+Shell is just a command interpreter to interface with a system. 
+
+__Terminal__ is just a wrapper on shell applications
+
+Shell > Application > Kernel
 
 input `echo $0` to display which Shell you using
 
