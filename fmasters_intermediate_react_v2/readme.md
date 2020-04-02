@@ -26,3 +26,34 @@ Both React.useMemo and React.useCallback receives a function as its first argume
 Jest will automatically find this folder and rund tests with it.
 
 ### Redux
+
+
+### Code Splitting
+The idea behind code splitting, is that u dont have to load up front, everything thats not essential for the first page load.
+
+If you want do defer the load of a component, you will not anymore import it like this:
+
+``` js
+import { Details } from './Details.js'
+```
+instead, you will:
+
+``` js
+const Details = lazy(() => import('./Details'))
+```
+
+`const Details` is a placeholder, that will not load this code until later when _Details_ is actually tried to be rendered for the first time.
+
+_Dynamic import_ is not something from React, is from Javascript.
+
+So, you can use it with `Suspense`, from React.
+
+``` 
+<Supense fallback={<h1> Loading... </h1>}>
+    <Router>
+        <Details>
+    </Router>
+</Supense>
+```
+
+Suspense will display Fallback component while something inside it is not ready to be rendered yet.
