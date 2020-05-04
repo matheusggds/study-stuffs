@@ -1,0 +1,26 @@
+{
+  "name": "pkg-one-test",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Matheus Gomide <matheus.silva@easynvest.com.br>",
+  "homepage": "https://github.com/matheusggds/study-stuffs#readme",
+  "license": "ISC",
+  "main": "lib/pkg-one-test.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusggds/study-stuffs.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/matheusggds/study-stuffs/issues"
+  }
+}
