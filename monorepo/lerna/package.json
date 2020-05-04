@@ -1,0 +1,19 @@
+{
+  "name": "lerna-test",
+  "version": "1.0.0",
+  "description": "testing lerna",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lerna",
+    "js",
+    "monorepo"
+  ],
+  "author": "matheus gomide",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
